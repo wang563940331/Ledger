@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 20:58:28
+ * @LastEditTime: 2026-02-01 21:51:41
  * @Description: 
  */
 #include "mainwindow.h"
@@ -149,6 +149,54 @@ int main(int argc, char *argv[])
         QStatusBar {
             background-color: #2a2a2a;
             color: #cccccc;
+        }
+            
+        /* 消息框样式 */
+        QMessageBox {
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+        
+        QMessageBox QLabel {
+            color: #ffffff;
+        }
+        
+        QMessageBox QPushButton {
+            background-color: #0078d7;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 15px;
+        }
+        
+        QMessageBox QPushButton:hover {
+            background-color: #106ebe;
+        }
+        
+        QMessageBox QPushButton:pressed {
+            background-color: #005a9e;
+        }
+        
+        /* 对话框样式 */
+        QDialog {
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+        
+        QDialog QLabel {
+            color: #ffffff;
+        }
+        
+        QDialog QPushButton {
+            background-color: #0078d7;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 15px;
+        }
+        
+        QDialog QPushButton:hover {
+            background-color: #106ebe;
         }
     )";
     a.setStyleSheet(styleSheet);
