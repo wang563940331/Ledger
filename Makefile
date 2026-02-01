@@ -232,7 +232,10 @@ Makefile: Ledger.pro I:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/win32-g++/qmake.co
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/features/yacc.prf \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/features/lex.prf \
 		Ledger.pro \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Charts.prl \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6OpenGLWidgets.prl \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Widgets.prl \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6OpenGL.prl \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Gui.prl \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Core.prl \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6EntryPoint.prl \
@@ -400,7 +403,10 @@ I:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/features/exceptions.prf:
 I:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/features/yacc.prf:
 I:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/features/lex.prf:
 Ledger.pro:
+I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Charts.prl:
+I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6OpenGLWidgets.prl:
 I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Widgets.prl:
+I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6OpenGL.prl:
 I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Gui.prl:
 I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6Core.prl:
 I:/OtherAPP/QTAPP/6.5.3/mingw_64/lib/Qt6EntryPoint.prl:

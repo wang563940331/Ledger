@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 18:01:53
+ * @LastEditTime: 2026-02-01 20:23:25
  * @Description: 
  */
 #include "mainwindow.h"
@@ -71,7 +71,11 @@ void MainWindow::initLedger()
     // 设置当月存款控件为不可编辑和灰色状态
     ui->monthlyDepositSpinBox->setReadOnly(true);
     ui->monthlyDepositSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: lightgray; color: gray; }");
-    
+    //让所有列自动拉伸以占满整个表格宽度
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    //为所有列设置最小宽度，确保内容不会被过度压缩
+    ui->tableView->horizontalHeader()->setMinimumSectionSize(100);
+
     // 设置当月可支配额度控件为不可编辑和灰色状态，且不可选中
     ui->disposableAmountSpinBox->setReadOnly(true);
     ui->disposableAmountSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: lightgray; color: gray; }");
