@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 21:08:58
+ * @LastEditTime: 2026-02-01 22:42:15
  * @Description: 
  */
 #include "mainwindow.h"
@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ledgerManager(new LedgerManager(this))
 {
     ui->setupUi(this);
+    // 设置窗口标题
     this->setWindowTitle("记账软件1.0");
 
     // 设置默认日期为当前日期
@@ -49,15 +50,29 @@ void MainWindow::initLedger()
 {
     // 设置文件路径
     excelFilePath = QDir::currentPath() + "/ledger.csv";
-    
+
+    // 禁用表格的所有编辑功能
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     // 设置表格视图
     ui->tableView->setModel(ledgerManager->getModel());
     // 设置表格外观
     ui->tableView->setAlternatingRowColors(true);  // 启用交替行颜色
-    ui->tableView->setShowGrid(false);  // 隐藏网格线
-    ui->tableView->horizontalHeader()->setStyleSheet(
-        "QHeaderView::section { background-color: #3a3a3a; color: white; padding: 8px; border: none; }"
+
+    // 自定义交替行颜色示例（暗色主题）
+    ui->tableView->setStyleSheet(
+        "QTableView { background-color: #2a2a2a; color: white; }"  // 主背景色和文字颜色
+        //  "QTableView::item { padding: 16px; }"  // 单元格内边距
+        "QTableView::item:alternate { background-color: #323232; }"  // 交替行背景色
     );
+
+
+    ui->tableView->setShowGrid(true);  // 显示网格线
+    //background-color 表示背景颜色
+    // color 表示文字颜色
+    // border 表示边框样式
+    ui->tableView->horizontalHeader()->setStyleSheet(
+        "QHeaderView::section { background-color: #3a3a3a; color: #ffffff; padding: 8px; border: 1px solid #4a4a4a; }"
+    );//样式表使用了Qt CSS选择器和样式属性来定义表头外观
 
     // 加载数据
     ledgerManager->loadData(excelFilePath);
@@ -66,7 +81,7 @@ void MainWindow::initLedger()
     ui->tableView->resizeColumnsToContents();
     
     // 为日期列设置最小宽度，确保完整显示
-    ui->tableView->setColumnWidth(0, 100);
+    ui->tableView->setColumnWidth(0, 120);
     
     // 设置定期余额默认值为上一次记录的值（如果有）
     double previousFixedDeposit = ledgerManager->getPreviousFixedDeposit();
@@ -75,27 +90,28 @@ void MainWindow::initLedger()
     }
     
     // 初始化控件状态
-    // 设置当月存款控件为不可编辑和灰色状态
+    // 设置当月存款控件为不可编辑和灰色状态（暗色主题）
     ui->monthlyDepositSpinBox->setReadOnly(true);
-    ui->monthlyDepositSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: lightgray; color: gray; }");
+    ui->monthlyDepositSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: #3a3a3a; color: #888888; }");
+    
     //让所有列自动拉伸以占满整个表格宽度
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     //为所有列设置最小宽度，确保内容不会被过度压缩
-    ui->tableView->horizontalHeader()->setMinimumSectionSize(100);
+    ui->tableView->horizontalHeader()->setMinimumSectionSize(120);
 
-    // 设置当月可支配额度控件为不可编辑和灰色状态，且不可选中
+    // 设置当月可支配额度控件为不可编辑和灰色状态，且不可选中（暗色主题）
     ui->disposableAmountSpinBox->setReadOnly(true);
-    ui->disposableAmountSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: lightgray; color: gray; }");
+    ui->disposableAmountSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: #3a3a3a; color: #888888; }");
     
     // 设置当月开支控件初始状态
     if (ledgerManager->getRowCount() == 0) {
         // 第一次填写，当月开支可编辑
         ui->expenseSpinBox->setReadOnly(false);
-        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: white; color: black; }");
+        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox { background-color: #3a3a3a; color: #ffffff; }");
     } else {
-        // 不是第一次填写，当月开支不可编辑且为灰色
+        // 不是第一次填写，当月开支不可编辑且为灰色（暗色主题）
         ui->expenseSpinBox->setReadOnly(true);
-        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: lightgray; color: gray; }");
+        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: #3a3a3a; color: #888888; }");
     }
 }
 
