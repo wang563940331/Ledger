@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 20:59:58
+ * @LastEditTime: 2026-02-01 21:08:58
  * @Description: 
  */
 #include "mainwindow.h"
@@ -18,7 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ledgerManager(new LedgerManager(this))
 {
     ui->setupUi(this);
-    
+    this->setWindowTitle("记账软件1.0");
+
     // 设置默认日期为当前日期
     ui->dateEdit->setDate(QDate::currentDate());
     
