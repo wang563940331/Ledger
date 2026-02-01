@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 20:23:25
+ * @LastEditTime: 2026-02-01 20:59:58
  * @Description: 
  */
 #include "mainwindow.h"
@@ -51,7 +51,13 @@ void MainWindow::initLedger()
     
     // 设置表格视图
     ui->tableView->setModel(ledgerManager->getModel());
-    
+    // 设置表格外观
+    ui->tableView->setAlternatingRowColors(true);  // 启用交替行颜色
+    ui->tableView->setShowGrid(false);  // 隐藏网格线
+    ui->tableView->horizontalHeader()->setStyleSheet(
+        "QHeaderView::section { background-color: #3a3a3a; color: white; padding: 8px; border: none; }"
+    );
+
     // 加载数据
     ledgerManager->loadData(excelFilePath);
     
