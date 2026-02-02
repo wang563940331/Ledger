@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:42:19
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 14:15:23
+ * @LastEditTime: 2026-02-02 21:35:03
  * @Description: 
  */
 /*
@@ -336,11 +336,45 @@ double LedgerManager::getPreviousFixedDeposit() const
     return 0.0;
 }
 
+QDate LedgerManager::getPreviousDate() const
+{
+    int rowCount = model->rowCount();
+    if (rowCount == 0) {
+        return QDate(); // 返回无效日期
+    }
+    
+    QStandardItem *previousItem = model->item(rowCount - 1, 0); // 获取上一次记录的日期
+    if (previousItem) {
+        QString dateStr = previousItem->text();
+        // 尝试多种日期格式解析
+        QDate date;
+        QStringList formats = {"yyyy/MM/dd", "yyyy-MM-dd", "MM/dd/yyyy", "dd/MM/yyyy"};
+        
+        for (const QString &format : formats) {
+            date = QDate::fromString(dateStr, format);
+            if (date.isValid()) {
+                break;
+            }
+        }
+        
+        return date;
+    }
+    
+    return QDate(); // 返回无效日期
+}
+
 bool LedgerManager::addRecord(const QDate &date, double totalDeposit, double salary, double fixedDeposit, double expense, double monthlyDeposit, const QString &note)
 {
     // 数据验证
     if (!date.isValid()) {
         QMessageBox::warning(nullptr, "数据验证失败", "记账日期无效！");
+        return false;
+    }
+    
+    // 检查当前日期是否早于或等于上一次记录的日期
+    QDate previousDate = getPreviousDate();
+    if (previousDate.isValid() && date <= previousDate) {
+        QMessageBox::warning(nullptr, "数据验证失败", "当前记账日期必须晚于上一次记录的日期！");
         return false;
     }
     

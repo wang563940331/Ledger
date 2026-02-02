@@ -5,7 +5,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += c++17
 
 # 头文件包含路径
-INCLUDEPATH += src/ledgermanager
+INCLUDEPATH += src/ledgermanager src/curveGraph
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -14,11 +14,13 @@ INCLUDEPATH += src/ledgermanager
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    src/ledgermanager/ledgermanager.cpp
+    src/ledgermanager/ledgermanager.cpp \
+    src/curveGraph/curveGraph.cpp
 
 HEADERS += \
     mainwindow.h \
-    src/ledgermanager/ledgermanager.h
+    src/ledgermanager/ledgermanager.h \
+    src/curveGraph/curveGraph.h
 
 FORMS += \
     mainwindow.ui

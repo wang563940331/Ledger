@@ -2,15 +2,18 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 14:16:12
+ * @LastEditTime: 2026-02-02 20:31:47
  * @Description: 
  */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ledgermanager.h"
+#include "src/curveGraph/curveGraph.h"
 
 #include <QMessageBox>
 #include <QDir>
+// Include QtCharts headers
+#include <QtCharts/QChartView>
 
 /**
  * @brief 构造函数
@@ -20,16 +23,44 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , ledgerManager(new LedgerManager(this))
+    , curveGraph(new CurveGraph(this))
 {
     ui->setupUi(this);
     // 设置窗口标题
     this->setWindowTitle("记账软件1.0");
 
-    // 设置默认日期为当前日期
-    ui->dateEdit->setDate(QDate::currentDate());
-    
     // 初始化账本功能
     initLedger();
+    
+    // 设置默认日期：上一个记录日期的下一个月的29号（如果没有则28号）
+    QDate defaultDate;
+    if (ledgerManager->isFirstRecord()) {
+        // 第一次填写，使用当前日期
+        defaultDate = QDate::currentDate();
+    } else {
+        // 获取上一个记录的日期
+        QDate previousDate = ledgerManager->getPreviousDate();
+        if (previousDate.isValid()) {
+            // 计算下一个月的日期
+            int nextMonthYear = previousDate.year();
+            int nextMonthMonth = previousDate.month() + 1;
+            if (nextMonthMonth > 12) {
+                nextMonthMonth = 1;
+                nextMonthYear++;
+            }
+            
+            // 尝试使用29号，如果没有则使用28号
+            if (QDate::isValid(nextMonthYear, nextMonthMonth, 29)) {
+                defaultDate = QDate(nextMonthYear, nextMonthMonth, 29);
+            } else {
+                defaultDate = QDate(nextMonthYear, nextMonthMonth, 28);
+            }
+        } else {
+            // 如果无法获取上一个日期，使用当前日期
+            defaultDate = QDate::currentDate();
+        }
+    }
+    ui->dateEdit->setDate(defaultDate);
     
     // 连接信号槽
     connect(ui->totalDepositSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, &MainWindow::calculateAmounts);
@@ -42,6 +73,15 @@ MainWindow::MainWindow(QWidget *parent)
     
     // 初始化计算
     calculateAmounts();
+    
+    // 初始化图表视图
+    curveGraph->initChartView(ui->chartView);
+    
+    // 初始加载数据
+    curveGraph->updateData(ledgerManager->getModel());
+    
+    // 连接标签页切换信号
+    connect(ui->tabWidget, &QTabWidget::currentChanged, this, &MainWindow::onTabChanged);
 }
 
 /**
@@ -49,7 +89,13 @@ MainWindow::MainWindow(QWidget *parent)
  */
 MainWindow::~MainWindow()
 {
+    // 先删除curveGraph，确保它能正确处理chartView的引用
+    delete curveGraph;
+    
+    // 再删除ledgerManager
     delete ledgerManager;
+    
+    // 最后删除ui，此时chartView已被安全处理
     delete ui;
 }
 
@@ -142,5 +188,17 @@ void MainWindow::on_saveButton_clicked()
         
         // 重新计算，确保状态正确
         calculateAmounts();
+    }
+}
+
+/**
+ * @brief 标签页切换事件处理函数
+ * @param index 当前标签页索引
+ */
+void MainWindow::onTabChanged(int index)
+{
+    if (index == 1) { // 图表标签页
+        // 更新图表数据
+        curveGraph->updateData(ledgerManager->getModel());
     }
 }

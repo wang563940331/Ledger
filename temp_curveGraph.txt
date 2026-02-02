@@ -1,0 +1,265 @@
+﻿/*
+ * @Author: yu.wang
+ * @Date: 2026-02-02 15:15:24
+ * @LastEditors: yu.wang
+ * @LastEditTime: 2026-02-02 16:51:54
+ * @Description: 瀛樻瓒嬪娍鍥捐〃绠＄悊绫诲疄鐜?
+ */
+#include "curveGraph.h"
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include <QTableView>
+#include <QDoubleSpinBox>
+#include <QHeaderView>
+#include <QStyleFactory>
+#include <QDateTime>
+#include <QPainter>
+#include <algorithm>
+
+// QtCharts 澶存枃浠?
+#include <QChartView>
+#include <QChart>
+#include <QLineSeries>
+#include <QDateTimeAxis>
+#include <QValueAxis>
+#include <QAbstractAxis>
+#include <QAbstractSeries>
+
+/**
+ * @brief 鏋勯€犲嚱鏁?
+ * @param parent 鐖跺璞℃寚閽?
+ */
+CurveGraph::CurveGraph(QObject *parent)
+    : QObject(parent)
+{
+
+}
+
+/**
+ * @brief 鏋愭瀯鍑芥暟
+ */
+CurveGraph::~CurveGraph()
+{
+
+}
+
+/**
+ * @brief 鍒涘缓瀛樻瓒嬪娍鍥捐〃
+ * @param model 璐︽湰鏁版嵁妯″瀷
+ * @return 杩斿洖鍒涘缓鐨勫浘琛ㄨ鍥惧璞?
+ */
+QtCharts::QChartView* CurveGraph::createDepositChart(QStandardItemModel *model)
+{
+    QtCharts::QChart *chart = new QtCharts::QChart();
+    chart->setTitle("瀛樻瓒嬪娍鍥捐〃");
+    
+    // 鎻愬彇鏁版嵁
+    QList<QDate> dates;
+    QList<double> deposits;
+    extractDepositData(model, dates, deposits);
+    
+    // 閰嶇疆鍥捐〃
+    configureChartAppearance(chart);
+    configureAxes(chart, dates, deposits);
+    createSeries(chart, dates, deposits);
+    
+    // 鍒涘缓鍥捐〃瑙嗗浘
+    QtCharts::QChartView *chartView = new QtCharts::QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setMinimumSize(800, 400);
+    
+    return chartView;
+}
+
+/**
+ * @brief 鏇存柊瀛樻瓒嬪娍鍥捐〃
+ * @param model 璐︽湰鏁版嵁妯″瀷
+ * @param chartView 鍥捐〃瑙嗗浘瀵硅薄
+ */
+void CurveGraph::updateDepositChart(QStandardItemModel *model, QtCharts::QChartView *chartView)
+{
+    if (!chartView || !chartView->chart()) {
+        return;
+    }
+    
+    QtCharts::QChart *chart = chartView->chart();
+    
+    // 绉婚櫎鎵€鏈夌郴鍒?
+    const auto seriesList = chart->series();
+    for (QtCharts::QAbstractSeries *series : seriesList) {
+        chart->removeSeries(series);
+        delete series;
+    }
+    
+    // 鎻愬彇鏈€鏂版暟鎹?
+    QList<QDate> dates;
+    QList<double> deposits;
+    extractDepositData(model, dates, deposits);
+    
+    // 鏇存柊鍧愭爣杞村拰绯诲垪
+    configureAxes(chart, dates, deposits);
+    createSeries(chart, dates, deposits);
+}
+
+/**
+ * @brief 浠庢ā鍨嬩腑鎻愬彇鏃ユ湡鍜屾€诲瓨娆炬暟鎹?
+ * @param model 璐︽湰鏁版嵁妯″瀷
+ * @param dates 鏃ユ湡鍒楄〃锛堣緭鍑哄弬鏁帮級
+ * @param deposits 瀛樻閲戦鍒楄〃锛堣緭鍑哄弬鏁帮級
+ */
+void CurveGraph::extractDepositData(QStandardItemModel *model, QList<QDate> &dates, QList<double> &deposits)
+{
+    if (!model) {
+        return;
+    }
+    
+    dates.clear();
+    deposits.clear();
+    
+    int rowCount = model->rowCount();
+    for (int row = 0; row < rowCount; ++row) {
+        // 鑾峰彇璁拌处鏃ユ湡锛堢0鍒楋級
+        QStandardItem *dateItem = model->item(row, 0);
+        if (dateItem) {
+            QDate date = QDate::fromString(dateItem->text(), "yyyy/MM/dd");
+            if (date.isValid()) {
+                dates.append(date);
+                
+                // 鑾峰彇褰撳墠鎬诲瓨娆鹃噾棰濓紙绗?鍒楋級
+                QStandardItem *depositItem = model->item(row, 1);
+                if (depositItem) {
+                    double deposit = depositItem->text().toDouble();
+                    deposits.append(deposit);
+                } else {
+                    deposits.append(0.0);
+                }
+            }
+        }
+    }
+}
+
+/**
+ * @brief 閰嶇疆鍥捐〃澶栬
+ * @param chart 鍥捐〃瀵硅薄
+ */
+void CurveGraph::configureChartAppearance(QtCharts::QChart *chart)
+{
+    if (!chart) {
+        return;
+    }
+    
+    // 璁剧疆鍥捐〃鑳屾櫙
+    chart->setBackgroundBrush(QBrush(QColor("#2a2a2a")));
+    
+    // 璁剧疆鏍囬鏍峰紡
+    QFont titleFont("寰蒋闆呴粦", 12, QFont::Bold);
+    chart->setTitleFont(titleFont);
+    chart->setTitleBrush(QBrush(QColor("#ffffff")));
+    
+    // 璁剧疆鍥句緥
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+    chart->legend()->setFont(QFont("寰蒋闆呴粦", 9));
+    chart->legend()->setBrush(QBrush(QColor("#2a2a2a")));
+    chart->legend()->setLabelColor(QColor("#ffffff"));
+}
+
+/**
+ * @brief 閰嶇疆鍧愭爣杞?
+ * @param chart 鍥捐〃瀵硅薄
+ * @param dates 鏃ユ湡鍒楄〃
+ * @param deposits 瀛樻閲戦鍒楄〃
+ */
+void CurveGraph::configureAxes(QtCharts::QChart *chart, const QList<QDate> &dates, const QList<double> &deposits)
+{
+    if (!chart || dates.isEmpty()) {
+        return;
+    }
+    
+    // 鍒涘缓X杞达紙鏃ユ湡杞达級
+    QtCharts::QDateTimeAxis *axisX = new QtCharts::QDateTimeAxis();
+    axisX->setFormat("yyyy-MM-dd");
+    axisX->setTitleText("璁拌处鏃ユ湡");
+    axisX->setFont(QFont("寰蒋闆呴粦", 9));
+    axisX->setTickCount(qMin(10, dates.size()));
+    axisX->setLabelsColor(QColor("#ffffff"));
+    axisX->setTitleBrush(QBrush(QColor("#ffffff")));
+    
+    // 璁剧疆X杞磋寖鍥?
+    axisX->setMin(QDateTime(dates.first()));
+    axisX->setMax(QDateTime(dates.last()));
+    
+    // 鍒涘缓Y杞达紙瀛樻閲戦杞达級
+    QtCharts::QValueAxis *axisY = new QtCharts::QValueAxis();
+    axisY->setTitleText("褰撳墠鎬诲瓨娆鹃噾棰濓紙鍏冿級");
+    axisY->setFont(QFont("寰蒋闆呴粦", 9));
+    axisY->setLabelsColor(QColor("#ffffff"));
+    axisY->setTitleBrush(QBrush(QColor("#ffffff")));
+    
+    // 璁剧疆Y杞磋寖鍥?
+    double minDeposit = 0;
+    double maxDeposit = 0;
+    if (!deposits.isEmpty()) {
+        maxDeposit = *std::max_element(deposits.begin(), deposits.end());
+        // 娣诲姞涓€浜涗綑閲?
+        maxDeposit = maxDeposit * 1.1;
+    }
+    axisY->setRange(minDeposit, maxDeposit);
+    
+    // 鏍规嵁瑙嗗浘瀹藉害鑷姩璋冩暣鍒诲害闂撮殧
+    QtCharts::QChartView *chartView = qobject_cast<QtCharts::QChartView*>(chart->parent());
+    if (chartView) {
+        int width = chartView->width();
+        if (width > 0) {
+            axisX->setTickCount(qMin(width / 80, 10) + 2);
+        }
+    }
+    
+    // 绉婚櫎鏃х殑鍧愭爣杞?
+    const auto axes = chart->axes();
+    for (QtCharts::QAbstractAxis *axis : axes) {
+        chart->removeAxis(axis);
+        delete axis;
+    }
+    
+    // 娣诲姞鏂扮殑鍧愭爣杞?
+    chart->addAxis(axisX, Qt::AlignBottom);
+    chart->addAxis(axisY, Qt::AlignLeft);
+}
+
+/**
+ * @brief 鍒涘缓骞舵坊鍔犳洸绾跨郴鍒?
+ * @param chart 鍥捐〃瀵硅薄
+ * @param dates 鏃ユ湡鍒楄〃
+ * @param deposits 瀛樻閲戦鍒楄〃
+ * @return 杩斿洖鍒涘缓鐨勬洸绾跨郴鍒楀璞?
+ */
+QtCharts::QLineSeries* CurveGraph::createSeries(QtCharts::QChart *chart, const QList<QDate> &dates, const QList<double> &deposits)
+{
+    if (!chart || dates.isEmpty() || deposits.isEmpty() || dates.size() != deposits.size()) {
+        return nullptr;
+    }
+    
+    // 鍒涘缓鏇茬嚎绯诲垪
+    QtCharts::QLineSeries *series = new QtCharts::QLineSeries();
+    series->setName("褰撳墠鎬诲瓨娆鹃噾棰?);
+    series->setPen(QPen(QColor("#4CAF50"), 2));
+    
+    // 娣诲姞鏁版嵁鐐?
+    for (int i = 0; i < dates.size(); ++i) {
+        QDateTime dateTime(dates[i]);
+        series->append(dateTime.toMSecsSinceEpoch(), deposits[i]);
+    }
+    
+    // 娣诲姞绯诲垪鍒板浘琛?
+    chart->addSeries(series);
+    
+    // 鍏宠仈鍧愭爣杞?
+    if (chart->axes().size() >= 2) {
+        series->attachAxis(chart->axes().at(0));
+        series->attachAxis(chart->axes().at(1));
+    }
+    
+    return series;
+}

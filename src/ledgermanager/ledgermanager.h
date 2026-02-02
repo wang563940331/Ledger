@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:41:35
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 13:50:02
+ * @LastEditTime: 2026-02-02 20:54:38
  * @Description: 
  */
 #ifndef LEDGERMANAGER_H
@@ -102,6 +102,12 @@ public:
     // 数据查询接口
     double getPreviousTotalDeposit() const;
     double getPreviousFixedDeposit() const;
+    
+    /**
+     * @brief 获取上一次记录的日期
+     * @return 返回上一次记录的日期
+     */
+    QDate getPreviousDate() const;
     int getRowCount() const;
     bool isFirstRecord() const;
     
