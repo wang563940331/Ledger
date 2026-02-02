@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 22:42:15
+ * @LastEditTime: 2026-02-02 13:52:56
  * @Description: 
  */
 #include "mainwindow.h"
@@ -51,37 +51,11 @@ void MainWindow::initLedger()
     // 设置文件路径
     excelFilePath = QDir::currentPath() + "/ledger.csv";
 
-    // 禁用表格的所有编辑功能
-    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    // 设置表格视图
-    ui->tableView->setModel(ledgerManager->getModel());
-    // 设置表格外观
-    ui->tableView->setAlternatingRowColors(true);  // 启用交替行颜色
-
-    // 自定义交替行颜色示例（暗色主题）
-    ui->tableView->setStyleSheet(
-        "QTableView { background-color: #2a2a2a; color: white; }"  // 主背景色和文字颜色
-        //  "QTableView::item { padding: 16px; }"  // 单元格内边距
-        "QTableView::item:alternate { background-color: #323232; }"  // 交替行背景色
-    );
-
-
-    ui->tableView->setShowGrid(true);  // 显示网格线
-    //background-color 表示背景颜色
-    // color 表示文字颜色
-    // border 表示边框样式
-    ui->tableView->horizontalHeader()->setStyleSheet(
-        "QHeaderView::section { background-color: #3a3a3a; color: #ffffff; padding: 8px; border: 1px solid #4a4a4a; }"
-    );//样式表使用了Qt CSS选择器和样式属性来定义表头外观
-
     // 加载数据
     ledgerManager->loadData(excelFilePath);
     
-    // 在数据加载完成后调整列宽以适应内容
-    ui->tableView->resizeColumnsToContents();
-    
-    // 为日期列设置最小宽度，确保完整显示
-    ui->tableView->setColumnWidth(0, 120);
+    // 使用LedgerManager初始化表格视图
+    ledgerManager->initTableView(ui->tableView);
     
     // 设置定期余额默认值为上一次记录的值（如果有）
     double previousFixedDeposit = ledgerManager->getPreviousFixedDeposit();
@@ -89,62 +63,31 @@ void MainWindow::initLedger()
         ui->fixedDepositSpinBox->setValue(previousFixedDeposit);
     }
     
-    // 初始化控件状态
-    // 设置当月存款控件为不可编辑和灰色状态（暗色主题）
-    ui->monthlyDepositSpinBox->setReadOnly(true);
-    ui->monthlyDepositSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: #3a3a3a; color: #888888; }");
-    
-    //让所有列自动拉伸以占满整个表格宽度
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    //为所有列设置最小宽度，确保内容不会被过度压缩
-    ui->tableView->horizontalHeader()->setMinimumSectionSize(120);
-
-    // 设置当月可支配额度控件为不可编辑和灰色状态，且不可选中（暗色主题）
-    ui->disposableAmountSpinBox->setReadOnly(true);
-    ui->disposableAmountSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: #3a3a3a; color: #888888; }");
-    
-    // 设置当月开支控件初始状态
-    if (ledgerManager->getRowCount() == 0) {
-        // 第一次填写，当月开支可编辑
-        ui->expenseSpinBox->setReadOnly(false);
-        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox { background-color: #3a3a3a; color: #ffffff; }");
-    } else {
-        // 不是第一次填写，当月开支不可编辑且为灰色（暗色主题）
-        ui->expenseSpinBox->setReadOnly(true);
-        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: #3a3a3a; color: #888888; }");
-    }
+    // 使用LedgerManager配置UI控件
+    ledgerManager->configureUI(ui->monthlyDepositSpinBox, 
+                             ui->disposableAmountSpinBox, 
+                             ui->expenseSpinBox);
 }
 
 void MainWindow::calculateAmounts()
 {
-    double totalDeposit = ui->totalDepositSpinBox->value();//当前总存款金额：
-    double salary = ui->salarySpinBox->value();//当月工资：
-    double fixedDeposit = ui->fixedDepositSpinBox->value();//定期余额：
-    double expenseSpinBox = ui->expenseSpinBox->value();//当月开支：
+    double totalDeposit = ui->totalDepositSpinBox->value();
+    double salary = ui->salarySpinBox->value();
+    double fixedDeposit = ui->fixedDepositSpinBox->value();
+    double expenseSpinBox = ui->expenseSpinBox->value();
     double monthlyDeposit = 0.0;
     
-    // 计算当月可支配额度 = 当前总存款金额 - 定期余额
-    double disposableAmount = totalDeposit - fixedDeposit;
+    // 使用LedgerManager计算可支配额度
+    double disposableAmount = ledgerManager->calculateDisposableAmount(totalDeposit, fixedDeposit);
     ui->disposableAmountSpinBox->setValue(disposableAmount);
-
     
     // 检查是否有上一次记录
-    int rowCount = ledgerManager->getRowCount();
-    if (rowCount == 0) {
-        // 第一次填写，没有上一次记录，提示用户手动填写当月开支
-        ui->expenseSpinBox->setReadOnly(false);
-        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: white; color: black; }");
-        // ui->expenseSpinBox->setValue(0.0);
-        
-        // 计算当月存款 = 当月工资 - 当月开支
+    if (ledgerManager->isFirstRecord()) {
+        // 第一次填写，手动计算当月存款
         monthlyDeposit = salary - expenseSpinBox;
         ui->monthlyDepositSpinBox->setValue(monthlyDeposit);
     } else {
-        // 有上一次记录，自动计算当月开支
-        ui->expenseSpinBox->setReadOnly(true);
-        ui->expenseSpinBox->setStyleSheet("QDoubleSpinBox:read-only { background-color: lightgray; color: gray; }");
-        
-        // 使用账本管理器计算金额
+        // 使用LedgerManager自动计算金额
         ledgerManager->calculateAmounts(totalDeposit, salary, expenseSpinBox, monthlyDeposit, true);
         
         // 更新控件值
@@ -172,10 +115,12 @@ void MainWindow::on_saveButton_clicked()
         // 调整列宽
         ui->tableView->resizeColumnsToContents();
         
+        // 重新设置列宽调整模式为拉伸，确保表头不会左缩进
+        ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        
         // 清空输入框，但保留定期余额为当前值
         ui->totalDepositSpinBox->setValue(0);
         ui->salarySpinBox->setValue(0);
-        // 保留定期余额为当前值，下次新增时默认使用
         ui->expenseSpinBox->setValue(0);
         ui->noteLineEdit->clear();
         

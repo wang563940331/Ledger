@@ -274,36 +274,6 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QTransform \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChart \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchart.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChartGlobal \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchartglobal.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtcharts-config.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtchartsexports.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractAxis \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractaxis.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QPen \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpen.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QFont \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QVariant \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLegend \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlegend.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGraphicsWidget \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicswidget.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicslayoutitem.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpainterpath.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QBrush \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QMargins \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLineSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlineseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QXYSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qxyseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QImage \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QValueAxis \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qvalueaxis.h \
 		ledgermanager.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QStandardItemModel \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qstandarditemmodel.h \
@@ -312,6 +282,27 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatetime.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcalendar.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTableView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDoubleSpinBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
 		debug/moc_predefs.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/bin/moc.exe
 	I:\OtherAPP\QTAPP\6.5.3\mingw_64\bin\moc.exe $(DEFINES) --include H:/My_project/QT/Ledger/debug/moc_predefs.h -II:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/win32-g++ -IH:/My_project/QT/Ledger -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtOpenGLWidgets -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtOpenGL -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -II:/OtherAPP/QTAPP/Tools/mingw1120_64/x86_64-w64-mingw32/include mainwindow.h -o debug\moc_mainwindow.cpp
@@ -452,6 +443,56 @@ debug/moc_ledgermanager.cpp: ledgermanager.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatetime.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcalendar.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTableView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qwidget.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qaction.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qkeysequence.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpalette.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qfontmetrics.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qfontinfo.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qcursor.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qbitmap.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qevent.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiodevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qpointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qurl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qeventpoint.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvector2d.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvectornd.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpointingdevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qinputdevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qscreen.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QList \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QRect \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QSize \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QSizeF \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QTransform \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDoubleSpinBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
 		debug/moc_predefs.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/bin/moc.exe
 	I:\OtherAPP\QTAPP\6.5.3\mingw_64\bin\moc.exe $(DEFINES) --include H:/My_project/QT/Ledger/debug/moc_predefs.h -II:/OtherAPP/QTAPP/6.5.3/mingw_64/mkspecs/win32-g++ -IH:/My_project/QT/Ledger -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtOpenGLWidgets -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtOpenGL -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui -II:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -II:/OtherAPP/QTAPP/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -II:/OtherAPP/QTAPP/Tools/mingw1120_64/x86_64-w64-mingw32/include ledgermanager.h -o debug\moc_ledgermanager.cpp
@@ -464,7 +505,195 @@ compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
 ui_mainwindow.h: mainwindow.ui \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/bin/uic.exe
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/bin/uic.exe \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchartview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractAxis \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractaxis.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChartGlobal \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchartglobal.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qglobal.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtversionchecks.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qconfig.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtcore-config.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtconfigmacros.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtcoreexports.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtnoop.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qsystemdetection.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qprocessordetection.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcompilerdetection.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qassert.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtypes.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtversion.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtypeinfo.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcontainerfwd.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qsysinfo.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlogging.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qflags.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcompare_impl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qatomic.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qbasicatomic.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qatomic_cxx11.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qgenericatomic.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qconstructormacros.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdarwinhelpers.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qexceptionhandling.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qforeach.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qttypetraits.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfunctionpointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qglobalstatic.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qmalloc.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qminmax.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnumeric.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qoverload.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qswap.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtresource.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qttranslation.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qversiontagging.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtcharts-config.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtchartsexports.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QPen \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpen.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtguiglobal.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtgui-config.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtguiexports.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qcolor.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qrgb.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnamespace.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtmetamacros.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringlist.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlist.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qarraydatapointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qarraydataops.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qarraydata.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qpair.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcontainertools_impl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qxptype_traits.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qhashfunctions.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstring.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qchar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qbytearray.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qrefcount.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qbytearrayview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringfwd.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/q20type_traits.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringliteral.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringalgorithms.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qanystringview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qutf8stringview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringtokenizer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringbuilder.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiterator.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qbytearraylist.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qalgorithms.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringmatcher.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qrgba64.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qbrush.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qpoint.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qscopedpointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qimage.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpaintdevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qwindowdefs.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qobjectdefs.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qwindowdefs_win.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qrect.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qmargins.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qsize.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpixelformat.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtransform.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpolygon.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qregion.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatastream.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiodevicebase.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qline.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpixmap.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qsharedpointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qshareddata.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qmetatype.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcompare.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfloat16.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qmath.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiterable.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qmetacontainer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcontainerinfo.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtaggedpointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qscopeguard.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QFont \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qfont.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QVariant \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qvariant.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdebug.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qtextstream.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qstringconverter_base.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcontiguouscache.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qmap.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qshareddata_impl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qset.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qhash.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qvarlengtharray.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/q20memory.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qobject.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcoreevent.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qobject_impl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qbindingstorage.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QObject \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractSeries \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractseries.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChart \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchart.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLegend \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlegend.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGraphicsWidget \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicswidget.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qaction.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qkeysequence.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qicon.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicslayoutitem.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qevent.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiodevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qpointer.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qurl.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qeventpoint.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvector2d.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvectornd.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpointingdevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qinputdevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qscreen.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QList \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QRect \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QSize \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QSizeF \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QTransform \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpainterpath.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpalette.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QBrush \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QMargins \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGraphicsView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpainter.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtextoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qfontinfo.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qfontmetrics.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qwidget.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qcursor.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qbitmap.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsscene.h
 	I:\OtherAPP\QTAPP\6.5.3\mingw_64\bin\uic.exe mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -639,36 +868,6 @@ debug/main.o: main.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QTransform \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChart \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchart.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChartGlobal \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchartglobal.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtcharts-config.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtchartsexports.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractAxis \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractaxis.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QPen \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpen.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QFont \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QVariant \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLegend \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlegend.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGraphicsWidget \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicswidget.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicslayoutitem.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpainterpath.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QBrush \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QMargins \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLineSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlineseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QXYSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qxyseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QImage \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QValueAxis \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qvalueaxis.h \
 		ledgermanager.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QStandardItemModel \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qstandarditemmodel.h \
@@ -677,6 +876,27 @@ debug/main.o: main.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatetime.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcalendar.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTableView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDoubleSpinBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QApplication \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qapplication.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcoreapplication.h \
@@ -860,20 +1080,52 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QTransform \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChart \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchart.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractseries.h \
+		ledgermanager.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QStandardItemModel \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qstandarditemmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QDate \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatetime.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcalendar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTableView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDoubleSpinBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
+		ui_mainwindow.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChartView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchartview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractAxis \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractaxis.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChartGlobal \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchartglobal.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtcharts-config.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qtchartsexports.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractAxis \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractaxis.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QPen \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpen.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QFont \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QVariant \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QAbstractSeries \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qabstractseries.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QChart \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qchart.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLegend \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlegend.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGraphicsWidget \
@@ -883,22 +1135,12 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpainterpath.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QBrush \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QMargins \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QLineSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qlineseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QXYSeries \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qxyseries.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QImage \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/QValueAxis \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCharts/qvalueaxis.h \
-		ledgermanager.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QStandardItemModel \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qstandarditemmodel.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qabstractitemmodel.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QDate \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatetime.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcalendar.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlocale.h \
-		ui_mainwindow.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGraphicsView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpainter.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtextoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QApplication \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qapplication.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcoreapplication.h \
@@ -922,11 +1164,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qguiapplication_platform.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDateEdit \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdatetimeedit.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvalidator.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDoubleSpinBox \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGridLayout \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgridlayout.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qlayout.h \
@@ -934,19 +1171,8 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qboxlayout.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QGroupBox \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qgroupbox.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QHeaderView \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qheaderview.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qslider.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QLabel \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qlabel.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qpicture.h \
@@ -955,7 +1181,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qlineedit.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtextcursor.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtextformat.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qtextoption.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMenuBar \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmenubar.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmenu.h \
@@ -964,13 +1189,9 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QStatusBar \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstatusbar.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTableView \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTabWidget \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QVBoxLayout \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QWidget \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QDir \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdir.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfile.h \
@@ -1114,17 +1335,14 @@ debug/ledgermanager.o: ledgermanager.cpp ledgermanager.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qdatetime.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qcalendar.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qlocale.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QFile \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfile.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfiledevice.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiodevice.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QTextStream \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QTableView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qframe.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qwidget.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qaction.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qkeysequence.h \
@@ -1135,6 +1353,7 @@ debug/ledgermanager.o: ledgermanager.cpp ledgermanager.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qcursor.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qbitmap.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qevent.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qiodevice.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qpointer.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qurl.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qeventpoint.h \
@@ -1148,7 +1367,32 @@ debug/ledgermanager.o: ledgermanager.cpp ledgermanager.h \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QSize \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QSizeF \
 		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/QTransform \
-		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QDoubleSpinBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QFile \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfile.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/qfiledevice.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtCore/QTextStream \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QHeaderView \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qheaderview.h \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/QStyleFactory \
+		I:/OtherAPP/QTAPP/6.5.3/mingw_64/include/QtWidgets/qstylefactory.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ledgermanager.o ledgermanager.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:41:35
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 22:24:29
+ * @LastEditTime: 2026-02-02 13:50:02
  * @Description: 
  */
 #ifndef LEDGERMANAGER_H
@@ -11,6 +11,9 @@
 #include <QObject>
 #include <QStandardItemModel>
 #include <QDate>
+#include <QTableView>
+#include <QDoubleSpinBox>
+#include <QMessageBox>
 
 /*
     QStandardItemModel的作用是：
@@ -37,19 +40,37 @@ public:
     explicit LedgerManager(QObject *parent = nullptr);
     ~LedgerManager();
 
+    // 模型和数据操作接口
     QStandardItemModel* getModel() const;
     void loadData(const QString &filePath);
     void saveData(const QString &filePath);
+    bool addRecord(const QDate &date, double totalDeposit, double salary, double fixedDeposit, double expense, double monthlyDeposit, const QString &note);
+    
+    // 计算相关接口
+    double calculateDisposableAmount(double totalDeposit, double fixedDeposit) const;
     void calculateAmounts(double totalDeposit, double salary, double &expense, double &monthlyDeposit, bool hasPreviousRecord = false);
+    
+    // 数据查询接口
     double getPreviousTotalDeposit() const;
     double getPreviousFixedDeposit() const;
-    bool addRecord(const QDate &date, double totalDeposit, double salary, double fixedDeposit, double expense, double monthlyDeposit, const QString &note);
     int getRowCount() const;
+    bool isFirstRecord() const;
+    
+    // UI初始化和配置接口
+    void initTableView(QTableView *tableView) const;
+    void configureUI(QDoubleSpinBox *monthlyDepositSpinBox, QDoubleSpinBox *disposableAmountSpinBox, QDoubleSpinBox *expenseSpinBox) const;
+    
+    // 错误提示接口
+    void showError(const QString &title, const QString &message) const;
+    void showSuccess(const QString &title, const QString &message) const;
+    bool confirmOperation(const QString &title, const QString &message) const;
 
 private:
     QStandardItemModel *model;
     QString currentFilePath;
     void initModel();
+    void setupDarkThemeStyle(QTableView *tableView) const;
+    void configureWidgetStyle(QWidget *widget, bool readOnly, const QString &readOnlyColor = "#3a3a3a", const QString &textColor = "#ffffff") const;
 };
 
 #endif // LEDGERMANAGER_H

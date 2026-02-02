@@ -2,13 +2,17 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:42:19
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-01 17:42:35
+ * @LastEditTime: 2026-02-02 14:02:25
  * @Description: 
  */
 #include "ledgermanager.h"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QTableView>
+#include <QDoubleSpinBox>
+#include <QHeaderView>
+#include <QStyleFactory>
 
 LedgerManager::LedgerManager(QObject *parent)
     : QObject(parent)
@@ -99,7 +103,7 @@ void LedgerManager::saveData(const QString &filePath)
     
     QFile file(filePath);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QMessageBox::warning(nullptr, "错误", "无法打开文件进行保存！");
+        showError("错误", "无法打开文件进行保存！");
         return;
     }
     
@@ -126,7 +130,12 @@ void LedgerManager::saveData(const QString &filePath)
     }
     
     file.close();
-    QMessageBox::information(nullptr, "成功", "记录已保存！");
+    showSuccess("成功", "记录已保存！");
+}
+
+double LedgerManager::calculateDisposableAmount(double totalDeposit, double fixedDeposit) const
+{
+    return totalDeposit - fixedDeposit;
 }
 
 void LedgerManager::calculateAmounts(double totalDeposit, double salary, double &expense, double &monthlyDeposit, bool hasPreviousRecord)
@@ -139,6 +148,94 @@ void LedgerManager::calculateAmounts(double totalDeposit, double salary, double 
     
     // 计算当月存款 = 当月工资 - 当月开支
     monthlyDeposit = salary - expense;
+}
+
+bool LedgerManager::isFirstRecord() const
+{
+    return model->rowCount() == 0;
+}
+
+void LedgerManager::initTableView(QTableView *tableView) const
+{
+    // 设置模型
+    tableView->setModel(const_cast<QStandardItemModel*>(model));
+    
+    // 禁用编辑功能
+    tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    
+    // 设置表格外观
+    tableView->setAlternatingRowColors(true);
+    
+    // 应用暗色主题样式
+    setupDarkThemeStyle(tableView);
+    
+    // 设置列宽
+    tableView->resizeColumnsToContents();
+    tableView->setColumnWidth(0, 120); // 日期列最小宽度
+    
+    // 设置自动拉伸
+    tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    tableView->horizontalHeader()->setMinimumSectionSize(120);
+}
+
+void LedgerManager::configureUI(QDoubleSpinBox *monthlyDepositSpinBox, QDoubleSpinBox *disposableAmountSpinBox, QDoubleSpinBox *expenseSpinBox) const
+{
+    // 配置当月存款控件
+    configureWidgetStyle(monthlyDepositSpinBox, true);
+    
+    // 配置可支配额度控件
+    configureWidgetStyle(disposableAmountSpinBox, true);
+    
+    // 配置当月开支控件
+    if (isFirstRecord()) {
+        // 第一次填写，可编辑
+        configureWidgetStyle(expenseSpinBox, false);
+    } else {
+        // 不是第一次填写，不可编辑
+        configureWidgetStyle(expenseSpinBox, true);
+    }
+}
+
+void LedgerManager::showError(const QString &title, const QString &message) const
+{
+    QMessageBox::warning(nullptr, title, message);
+}
+
+void LedgerManager::showSuccess(const QString &title, const QString &message) const
+{
+    QMessageBox::information(nullptr, title, message);
+}
+
+bool LedgerManager::confirmOperation(const QString &title, const QString &message) const
+{
+    return QMessageBox::question(nullptr, title, message) == QMessageBox::Yes;
+}
+
+void LedgerManager::setupDarkThemeStyle(QTableView *tableView) const
+{
+    tableView->setStyleSheet(
+        "QTableView { background-color: #2a2a2a; color: white; }"  // 主背景色和文字颜色
+        "QTableView::item:alternate { background-color: #323232; }"  // 交替行背景色
+        "QTableView { gridline-color: #4a4a4a; }"  // 网格线颜色
+    );
+    
+    tableView->horizontalHeader()->setStyleSheet(
+        "QHeaderView::section { background-color: #3a3a3a; color: #ffffff; padding: 8px; border: 1px solid #4a4a4a; }"
+    );
+}
+
+void LedgerManager::configureWidgetStyle(QWidget *widget, bool readOnly, const QString &readOnlyColor, const QString &textColor) const
+{
+    QDoubleSpinBox *spinBox = qobject_cast<QDoubleSpinBox*>(widget);
+    if (spinBox) {
+        spinBox->setReadOnly(readOnly);
+        
+        if (readOnly) {
+            spinBox->setStyleSheet(QString("QDoubleSpinBox:read-only { background-color: %1; color: #888888; }").arg(readOnlyColor));
+        } else {
+            spinBox->setStyleSheet(QString("QDoubleSpinBox { background-color: %1; color: %2; }").arg(readOnlyColor, textColor));
+        }
+    }
 }
 
 double LedgerManager::getPreviousTotalDeposit() const
