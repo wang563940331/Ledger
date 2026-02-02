@@ -2,7 +2,14 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:42:19
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 14:02:25
+ * @LastEditTime: 2026-02-02 14:15:23
+ * @Description: 
+ */
+/*
+ * @Author: yu.wang
+ * @Date: 2026-02-01 17:42:19
+ * @LastEditors: yu.wang
+ * @LastEditTime: 2026-02-02 14:08:04
  * @Description: 
  */
 #include "ledgermanager.h"
@@ -14,22 +21,36 @@
 #include <QHeaderView>
 #include <QStyleFactory>
 
+/**
+ * @brief 构造函数
+ * @param parent 父对象指针
+ */
 LedgerManager::LedgerManager(QObject *parent)
     : QObject(parent)
 {
     initModel();
 }
 
+/**
+ * @brief 析构函数
+ */
 LedgerManager::~LedgerManager()
 {
     delete model;
 }
 
+/**
+ * @brief 获取账本数据模型
+ * @return 返回QStandardItemModel指针
+ */
 QStandardItemModel* LedgerManager::getModel() const
 {
     return model;
 }
 
+/**
+ * @brief 初始化模型
+ */
 void LedgerManager::initModel()
 {
     model = new QStandardItemModel(this);
@@ -40,6 +61,10 @@ void LedgerManager::initModel()
     model->setHorizontalHeaderLabels(headers);
 }
 
+/**
+ * @brief 从文件加载账本数据
+ * @param filePath 文件路径
+ */
 void LedgerManager::loadData(const QString &filePath)
 {
     currentFilePath = filePath;
@@ -97,6 +122,10 @@ void LedgerManager::loadData(const QString &filePath)
     file.close();
 }
 
+/**
+ * @brief 保存账本数据到文件
+ * @param filePath 文件路径
+ */
 void LedgerManager::saveData(const QString &filePath)
 {
     currentFilePath = filePath;
@@ -133,11 +162,25 @@ void LedgerManager::saveData(const QString &filePath)
     showSuccess("成功", "记录已保存！");
 }
 
+/**
+ * @brief 计算可支配额度
+ * @param totalDeposit 当前总存款金额
+ * @param fixedDeposit 定期余额
+ * @return 返回可支配额度（当前总存款金额 - 定期余额）
+ */
 double LedgerManager::calculateDisposableAmount(double totalDeposit, double fixedDeposit) const
 {
     return totalDeposit - fixedDeposit;
 }
 
+/**
+ * @brief 计算当月开支和存款
+ * @param totalDeposit 当前总存款金额
+ * @param salary 当月工资
+ * @param expense 当月开支（输出参数）
+ * @param monthlyDeposit 当月存款（输出参数）
+ * @param hasPreviousRecord 是否有上一次记录
+ */
 void LedgerManager::calculateAmounts(double totalDeposit, double salary, double &expense, double &monthlyDeposit, bool hasPreviousRecord)
 {
     if (hasPreviousRecord) {
@@ -150,11 +193,19 @@ void LedgerManager::calculateAmounts(double totalDeposit, double salary, double 
     monthlyDeposit = salary - expense;
 }
 
+/**
+ * @brief 判断是否为第一条记录
+ * @return 是第一条记录返回true，否则返回false
+ */
 bool LedgerManager::isFirstRecord() const
 {
     return model->rowCount() == 0;
 }
 
+/**
+ * @brief 初始化表格视图
+ * @param tableView 表格视图指针
+ */
 void LedgerManager::initTableView(QTableView *tableView) const
 {
     // 设置模型
@@ -178,6 +229,12 @@ void LedgerManager::initTableView(QTableView *tableView) const
     tableView->horizontalHeader()->setMinimumSectionSize(120);
 }
 
+/**
+ * @brief 配置UI控件
+ * @param monthlyDepositSpinBox 当月存款控件指针
+ * @param disposableAmountSpinBox 可支配额度控件指针
+ * @param expenseSpinBox 当月开支控件指针
+ */
 void LedgerManager::configureUI(QDoubleSpinBox *monthlyDepositSpinBox, QDoubleSpinBox *disposableAmountSpinBox, QDoubleSpinBox *expenseSpinBox) const
 {
     // 配置当月存款控件
@@ -211,6 +268,10 @@ bool LedgerManager::confirmOperation(const QString &title, const QString &messag
     return QMessageBox::question(nullptr, title, message) == QMessageBox::Yes;
 }
 
+/**
+ * @brief 设置暗色主题样式
+ * @param tableView 表格视图指针
+ */
 void LedgerManager::setupDarkThemeStyle(QTableView *tableView) const
 {
     tableView->setStyleSheet(
@@ -224,6 +285,13 @@ void LedgerManager::setupDarkThemeStyle(QTableView *tableView) const
     );
 }
 
+/**
+ * @brief 配置控件样式
+ * @param widget 控件指针
+ * @param readOnly 是否只读
+ * @param readOnlyColor 只读背景颜色
+ * @param textColor 文本颜色
+ */
 void LedgerManager::configureWidgetStyle(QWidget *widget, bool readOnly, const QString &readOnlyColor, const QString &textColor) const
 {
     QDoubleSpinBox *spinBox = qobject_cast<QDoubleSpinBox*>(widget);
@@ -346,6 +414,10 @@ bool LedgerManager::addRecord(const QDate &date, double totalDeposit, double sal
     return true;
 }
 
+/**
+ * @brief 获取记录行数
+ * @return 返回记录行数
+ */
 int LedgerManager::getRowCount() const
 {
     return model->rowCount();

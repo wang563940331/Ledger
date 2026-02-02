@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 13:52:56
+ * @LastEditTime: 2026-02-02 14:16:12
  * @Description: 
  */
 #include "mainwindow.h"
@@ -12,6 +12,10 @@
 #include <QMessageBox>
 #include <QDir>
 
+/**
+ * @brief 构造函数
+ * @param parent 父窗口指针
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -40,12 +44,18 @@ MainWindow::MainWindow(QWidget *parent)
     calculateAmounts();
 }
 
+/**
+ * @brief 析构函数
+ */
 MainWindow::~MainWindow()
 {
     delete ledgerManager;
     delete ui;
 }
 
+/**
+ * @brief 初始化账本功能
+ */
 void MainWindow::initLedger()
 {
     // 设置文件路径
@@ -69,6 +79,9 @@ void MainWindow::initLedger()
                              ui->expenseSpinBox);
 }
 
+/**
+ * @brief 计算金额
+ */
 void MainWindow::calculateAmounts()
 {
     double totalDeposit = ui->totalDepositSpinBox->value();
@@ -96,6 +109,9 @@ void MainWindow::calculateAmounts()
     }
 }
 
+/**
+ * @brief 保存按钮点击事件处理函数
+ */
 void MainWindow::on_saveButton_clicked()
 {
     // 获取当前数据

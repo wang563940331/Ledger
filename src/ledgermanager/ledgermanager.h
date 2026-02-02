@@ -37,17 +37,66 @@ class LedgerManager : public QObject
     Q_OBJECT
 
 public:
+    /**
+     * @brief 构造函数
+     * @param parent 父对象指针
+     */
     explicit LedgerManager(QObject *parent = nullptr);
+    
+    /**
+     * @brief 析构函数
+     */
     ~LedgerManager();
 
     // 模型和数据操作接口
+    /**
+     * @brief 获取账本数据模型
+     * @return 返回QStandardItemModel指针
+     */
     QStandardItemModel* getModel() const;
+    
+    /**
+     * @brief 从文件加载账本数据
+     * @param filePath 文件路径
+     */
     void loadData(const QString &filePath);
+    
+    /**
+     * @brief 保存账本数据到文件
+     * @param filePath 文件路径
+     */
     void saveData(const QString &filePath);
+    
+    /**
+     * @brief 添加新的记账记录
+     * @param date 记账日期
+     * @param totalDeposit 当前总存款金额
+     * @param salary 当月工资
+     * @param fixedDeposit 定期余额
+     * @param expense 当月开支
+     * @param monthlyDeposit 当月存款
+     * @param note 备注
+     * @return 添加成功返回true，否则返回false
+     */
     bool addRecord(const QDate &date, double totalDeposit, double salary, double fixedDeposit, double expense, double monthlyDeposit, const QString &note);
     
     // 计算相关接口
+    /**
+     * @brief 计算当月可支配额度
+     * @param totalDeposit 当前总存款金额
+     * @param fixedDeposit 定期余额
+     * @return 返回可支配额度
+     */
     double calculateDisposableAmount(double totalDeposit, double fixedDeposit) const;
+    
+    /**
+     * @brief 计算当月开支和存款
+     * @param totalDeposit 当前总存款金额
+     * @param salary 当月工资
+     * @param expense 当月开支（输出参数）
+     * @param monthlyDeposit 当月存款（输出参数）
+     * @param hasPreviousRecord 是否有上一次记录
+     */
     void calculateAmounts(double totalDeposit, double salary, double &expense, double &monthlyDeposit, bool hasPreviousRecord = false);
     
     // 数据查询接口
