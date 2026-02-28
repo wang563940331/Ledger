@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:42:19
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 21:35:03
+ * @LastEditTime: 2026-02-28 21:52:41
  * @Description: 
  */
 /*
@@ -20,7 +20,7 @@
 #include <QDoubleSpinBox>
 #include <QHeaderView>
 #include <QStyleFactory>
-
+#include <QDebug>
 /**
  * @brief 构造函数
  * @param parent 父对象指针
@@ -313,9 +313,12 @@ double LedgerManager::getPreviousTotalDeposit() const
         return 0.0;
     }
     
-    QStandardItem *previousItem = model->item(rowCount - 1, 1); // 获取上一次记录的总存款金额
-    if (previousItem) {
-        return previousItem->text().toDouble();
+    qDebug() << "获取上一次总存款金额，行数:" << rowCount;
+   for (int row = rowCount - 1; row >= 0; --row) {
+        QStandardItem *previousItem = model->item(row, 1); // 获取当前行的总存款金额
+        if (previousItem && !previousItem->text().isEmpty()) {
+            return previousItem->text().toDouble();
+        }
     }
     
     return 0.0;
@@ -328,10 +331,13 @@ double LedgerManager::getPreviousFixedDeposit() const
         return 0.0;
     }
     
-    QStandardItem *previousItem = model->item(rowCount - 1, 3); // 获取上一次记录的定期余额
-    if (previousItem) {
-        return previousItem->text().toDouble();
+    for (int row = rowCount - 1; row >= 0; --row) {
+        QStandardItem *previousItem = model->item(row, 3); // 获取当前行的定期余额
+        if (previousItem && !previousItem->text().isEmpty()) {
+            return previousItem->text().toDouble();
+        }
     }
+    
     
     return 0.0;
 }
@@ -343,21 +349,22 @@ QDate LedgerManager::getPreviousDate() const
         return QDate(); // 返回无效日期
     }
     
-    QStandardItem *previousItem = model->item(rowCount - 1, 0); // 获取上一次记录的日期
-    if (previousItem) {
-        QString dateStr = previousItem->text();
-        // 尝试多种日期格式解析
-        QDate date;
-        QStringList formats = {"yyyy/MM/dd", "yyyy-MM-dd", "MM/dd/yyyy", "dd/MM/yyyy"};
-        
-        for (const QString &format : formats) {
-            date = QDate::fromString(dateStr, format);
-            if (date.isValid()) {
-                break;
+     // 从最后一行开始向前查找有效记录
+    for (int row = rowCount - 1; row >= 0; --row) {
+        QStandardItem *previousItem = model->item(row, 0); // 获取当前行的日期
+        if (previousItem && !previousItem->text().isEmpty()) {
+            QString dateStr = previousItem->text();
+            // 尝试多种日期格式解析
+            QDate date;
+            QStringList formats = {"yyyy/MM/dd", "yyyy-MM-dd", "MM/dd/yyyy", "dd/MM/yyyy"};
+            
+            for (const QString &format : formats) {
+                date = QDate::fromString(dateStr, format);
+                if (date.isValid()) {
+                    return date;
+                }
             }
         }
-        
-        return date;
     }
     
     return QDate(); // 返回无效日期
@@ -365,6 +372,8 @@ QDate LedgerManager::getPreviousDate() const
 
 bool LedgerManager::addRecord(const QDate &date, double totalDeposit, double salary, double fixedDeposit, double expense, double monthlyDeposit, const QString &note)
 {
+
+    
     // 数据验证
     if (!date.isValid()) {
         QMessageBox::warning(nullptr, "数据验证失败", "记账日期无效！");
@@ -404,6 +413,7 @@ bool LedgerManager::addRecord(const QDate &date, double totalDeposit, double sal
         double previousTotalDeposit = getPreviousTotalDeposit();
         if (totalDeposit > previousTotalDeposit + salary) {
             QMessageBox::warning(nullptr, "数据验证失败", "当前总存款金额不能大于上一次总存款金额与当月工资之和！");
+            qDebug() << "上一次记录的总存款金额:" << previousTotalDeposit << "当前总存款金额:" << totalDeposit << "工资:" << salary;
             return false;
         }
     }
@@ -431,7 +441,10 @@ bool LedgerManager::addRecord(const QDate &date, double totalDeposit, double sal
     // 计算当月可支配额度 = 当前总存款金额 - 定期余额
     double disposableAmount = totalDeposit - fixedDeposit;
     QString disposableAmountStr = QString::number(disposableAmount, 'f', 2);
-    
+
+    // 添加新行前清理所有空行
+    cleanEmptyRows();
+
     // 添加新行
     QList<QStandardItem*> items;
     items << new QStandardItem(dateStr);
@@ -455,4 +468,32 @@ bool LedgerManager::addRecord(const QDate &date, double totalDeposit, double sal
 int LedgerManager::getRowCount() const
 {
     return model->rowCount();
+}
+
+/**
+ * @brief 检查行是否为空
+ * @param row 行号
+ * @return 行为空返回true，否则返回false
+ */
+bool LedgerManager::isEmptyRow(int row) const
+{
+    for (int col = 0; col < model->columnCount(); ++col) {
+        QStandardItem *item = model->item(row, col);
+        if (item && !item->text().isEmpty()) {
+            return false;
+        }
+    }
+    return true;
+}
+/**
+ * @brief 清理所有空行
+ */
+void LedgerManager::cleanEmptyRows()
+{
+    // 从最后一行开始向前遍历，删除空行
+    for (int row = model->rowCount() - 1; row >= 0; --row) {
+        if (isEmptyRow(row)) {
+            model->removeRow(row);
+        }
+    }
 }

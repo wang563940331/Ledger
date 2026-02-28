@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:41:35
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 20:54:38
+ * @LastEditTime: 2026-02-28 21:49:53
  * @Description: 
  */
 #ifndef LEDGERMANAGER_H
@@ -126,6 +126,8 @@ private:
     void initModel();
     void setupDarkThemeStyle(QTableView *tableView) const;
     void configureWidgetStyle(QWidget *widget, bool readOnly, const QString &readOnlyColor = "#3a3a3a", const QString &textColor = "#ffffff") const;
+    bool isEmptyRow(int row) const;  // 新增
+    void cleanEmptyRows();           // 新增
 };
 
 #endif // LEDGERMANAGER_H

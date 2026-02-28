@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-02 20:31:47
+ * @LastEditTime: 2026-02-28 21:59:05
  * @Description: 
  */
 #include "mainwindow.h"
@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     // 设置窗口标题
-    this->setWindowTitle("记账软件1.0");
+    this->setWindowTitle("记账软件1.1");
 
     // 初始化账本功能
     initLedger();
@@ -105,8 +105,9 @@ MainWindow::~MainWindow()
 void MainWindow::initLedger()
 {
     // 设置文件路径
+    //excelFilePath = QDir::toNativeSeparators("H:/My_project/QT/Ledger/ledger.csv");
     excelFilePath = QDir::currentPath() + "/ledger.csv";
-
+    
     // 加载数据
     ledgerManager->loadData(excelFilePath);
     
