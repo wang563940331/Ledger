@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 17:42:19
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-28 21:52:41
+ * @LastEditTime: 2026-02-28 22:43:57
  * @Description: 
  */
 /*
@@ -356,8 +356,12 @@ QDate LedgerManager::getPreviousDate() const
             QString dateStr = previousItem->text();
             // 尝试多种日期格式解析
             QDate date;
-            QStringList formats = {"yyyy/MM/dd", "yyyy-MM-dd", "MM/dd/yyyy", "dd/MM/yyyy"};
-            
+            QStringList formats = {
+                "yyyy/MM/dd", "yyyy/MM/d", "yyyy/M/dd", "yyyy/M/d", // 斜杠分隔的各种格式
+                "yyyy-MM-dd", "yyyy-MM-d", "yyyy-M-dd", "yyyy-M-d", // 破折号分隔的各种格式
+                "MM/dd/yyyy", "MM/d/yyyy", "M/dd/yyyy", "M/d/yyyy", // 月/日/年格式
+                "dd/MM/yyyy", "d/MM/yyyy", "dd/M/yyyy", "d/M/yyyy"  // 日/月/年格式
+            };
             for (const QString &format : formats) {
                 date = QDate::fromString(dateStr, format);
                 if (date.isValid()) {
