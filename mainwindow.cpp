@@ -2,7 +2,7 @@
  * @Author: yu.wang
  * @Date: 2026-02-01 15:05:31
  * @LastEditors: yu.wang
- * @LastEditTime: 2026-02-28 21:59:05
+ * @LastEditTime: 2026-02-28 22:08:28
  * @Description: 
  */
 #include "mainwindow.h"
@@ -82,6 +82,9 @@ MainWindow::MainWindow(QWidget *parent)
     
     // 连接标签页切换信号
     connect(ui->tabWidget, &QTabWidget::currentChanged, this, &MainWindow::onTabChanged);
+    
+    // 设置默认显示记账界面（索引0）
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 /**
